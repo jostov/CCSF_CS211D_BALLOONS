@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".WHAT_AM_I_GONNA_DO_WITH_ALL_THESE_BALLOONS"
+            android:name=".Balloonicus"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
