@@ -67,7 +67,7 @@ public class Balloonicus extends Activity{
         }
         protected int[] gimmeBALLOON(){
             int[] ball = new int[4];
-            ball[0] = random.nextInt(getWidth()/4);
+            ball[0] = random.nextInt(((getWidth()<=getHeight()) ? getWidth():getHeight())/4);
             ball[1] = ball[0] + random.nextInt(getHeight()- 2  * ball[0]);
             ball[2] = ball[0] + random.nextInt(getWidth()-2 * ball[0]);
             ball[3] = random.nextInt(255255255);
