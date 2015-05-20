@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">OHMAIGAWDBALLOONS</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="addBalloon">Add Balloon</string>
+    <string name="popBalloons">Pop Balloons</string>
+</resources>
+
