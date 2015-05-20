@@ -60,7 +60,6 @@ public class WHAT_AM_I_GONNA_DO_WITH_ALL_THESE_BALLOONS extends Activity{
             super(context);
             random = new Random();
         }
-        //WHAT_AM_I_GONNA_DO_WITH_ALL_THESE_BALLOONS.this.getWidth()/getHeight()
         @Override
         protected void onDraw(Canvas canvas){
             super.onDraw(canvas);
@@ -69,24 +68,16 @@ public class WHAT_AM_I_GONNA_DO_WITH_ALL_THESE_BALLOONS extends Activity{
                 drawBALLOON(canvas, each);
             }
         }
-        protected int[] gimmeBALLOON(){//I think I'm going to start leaving really emotional comments
-            int[] BALLOON = new int[4]; //Like, I was really proud of the next bit.
-            BALLOON[0] = random.nextInt(200);//I have no right to be, really. But I rationalized it as being data efficient
-            BALLOON[1] = BALLOON[0] + random.nextInt(WHAT_AM_I_GONNA_DO_WITH_ALL_THESE_BALLOONS.this.getHeight()- 2  * BALLOON[0]); //It's not data efficient.
-            BALLOON[2] = BALLOON[0] + random.nextInt(WHAT_AM_I_GONNA_DO_WITH_ALL_THESE_BALLOONS.this.getWidth()-2 * BALLOON[0]); //It's not data efficient.
-            BALLOON[3] = random.nextInt(255255255);//It's not even java appropriate.
-            return BALLOON; //SO WHAT IF MY BALLOONS ARE SHITTY THE COLORS ARE 3* AS DATA EFFICIENT!
-        }
-        protected int[] gimmeCOLOR(int somecolor){
-            int[] color = new int[3];
-            color[0] = somecolor - (somecolor / 1000);
-            color[1] = color[0] - (color[0]/ 1000);
-            color[2] = color[1] - (color[1]/ 1000);
-            return color;
+        protected int[] gimmeBALLOON(){
+            int[] BALLOON = new int[4];
+            BALLOON[0] = random.nextInt(200);
+            BALLOON[1] = BALLOON[0] + random.nextInt(WHAT_AM_I_GONNA_DO_WITH_ALL_THESE_BALLOONS.this.getHeight()- 2  * BALLOON[0]);
+            BALLOON[2] = BALLOON[0] + random.nextInt(WHAT_AM_I_GONNA_DO_WITH_ALL_THESE_BALLOONS.this.getWidth()-2 * BALLOON[0]);
+            BALLOON[3] = random.nextInt(255255255);
+            return BALLOON;
         }
         protected void drawBALLOON(Canvas canvas, int[] BALLOON){
-            int[] color = gimmeCOLOR(BALLOON[3]);
-            paint.setColor(Color.argb(255, color[0], color[1], color[2]));
+            paint.setColor(Color.argb(255, (BALLOON[3] % 1000), ((BALLOON[3]/1000) % 1000), (BALLOON[3]/1000000)%1000));
             canvas.drawCircle(BALLOON[2], BALLOON[1], BALLOON[0], paint);
         }
         public void addBalloon(){
