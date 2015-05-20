@@ -12,8 +12,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Balloonicus extends Activity{
-    int height = -1;
-    int width = -1;
+    int height, width = -1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,8 +74,7 @@ public class Balloonicus extends Activity{
             return ball;
         }
         protected void drawBALLOON(Canvas canvas, int[] ball){
-            paint.setColor(Color.argb(255, (ball[3] % 1000),
-                    ((ball[3]/1000) % 1000), (ball[3]/1000000)%1000));
+            paint.setColor(Color.argb(255, (ball[3] % 1000), ((ball[3]/1000) % 1000), (ball[3]/1000000)%1000));
             canvas.drawCircle(ball[2], ball[1], ball[0], paint);
         }
         public void addBalloon(){
