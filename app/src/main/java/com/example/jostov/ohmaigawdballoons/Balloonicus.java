@@ -74,7 +74,7 @@ public class Balloonicus extends Activity{
             return ball;
         }
         protected void drawBALLOON(Canvas canvas, int[] ball){
-            paint.setColor(Color.argb(255, (ball[3] % 1000), ((ball[3]/1000) % 1000), (ball[3]/1000000)%1000));
+            paint.setColor(Color.argb(255, (ball[3] % 1000), ((ball[3]/1000) % 1000), (ball[3]/1000000)));
             canvas.drawCircle(ball[2], ball[1], ball[0], paint);
         }
         public void addBalloon(){
